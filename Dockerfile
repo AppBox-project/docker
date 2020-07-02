@@ -14,7 +14,6 @@ RUN apk add --no-cache git
 # Files
 RUN mkdir -p /AppBox/Files/Users
 RUN mkdir -p /AppBox/Files/Public
-COPY Files/Public /AppBox/Files/Public
 
 # System
 RUN mkdir -p /AppBox/System/Backends
