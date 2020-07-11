@@ -10,7 +10,6 @@ RUN yarn global add typescript
 RUN yarn global add ts-node
 RUN yarn global add gatsby-cli
 RUN apk add --no-cache git
-RUN sudo apt install -y build-essential
 
 # Files
 RUN mkdir -p /AppBox/Files/Users
