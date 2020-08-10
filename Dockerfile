@@ -21,14 +21,14 @@ RUN mkdir -p /AppBox/System/Backends
 # Client
 RUN mkdir -p /System/Client
 WORKDIR /AppBox/System
-RUN git clone https://github.com/Duveaux/AppBox-Client.git Client
+RUN git clone https://github.com/AppBox-project/client.git Client
 WORKDIR /AppBox/System/Client
 RUN yarn install
 RUN yarn build
 
 # Server
 WORKDIR /AppBox/System
-RUN git clone https://github.com/Duveaux/AppBox-Server.git Server
+RUN git clone https://github.com/AppBox-project/server.git Server
 WORKDIR /AppBox/System/Server
 RUN yarn install
 RUN yarn add typescript
@@ -36,7 +36,7 @@ RUN yarn build
 
 # Supervisor
 WORKDIR /AppBox/System
-RUN git clone https://github.com/Duveaux/AppBox-Supervisor.git Supervisor
+RUN git clone https://github.com/AppBox-project/supervisor.git Supervisor
 WORKDIR /AppBox/System/Supervisor
 RUN yarn install
 RUN yarn add typescript
@@ -44,7 +44,7 @@ RUN yarn build
 
 # Siteserver
 WORKDIR /AppBox/System
-RUN git clone https://github.com/Duveaux/AppBox-SiteServer.git SiteServer
+RUN git clone https://github.com/AppBox-project/siteserver.git SiteServer
 WORKDIR /AppBox/System/SiteServer
 RUN yarn install
 RUN yarn add typescript
