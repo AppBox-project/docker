@@ -34,6 +34,14 @@ RUN yarn install
 RUN yarn add typescript
 RUN yarn build
 
+# Engine
+WORKDIR /AppBox/System
+RUN git clone https://github.com/AppBox-project/engine.git Engine
+WORKDIR /AppBox/System/Engine
+RUN yarn install
+RUN yarn add typescript
+RUN yarn build
+
 # Supervisor
 WORKDIR /AppBox/System
 RUN git clone https://github.com/AppBox-project/supervisor.git Supervisor
@@ -50,9 +58,10 @@ RUN yarn install
 RUN yarn add typescript
 
 # add `/app/node_modules/.bin` to $PATH
-ENV PATH /AppBox/System/Server/node_modules/.bin:$PATH
-ENV PATH /AppBox/System/Supervisor/node_modules/.bin:$PATH
 ENV PATH /AppBox/System/Client/node_modules/.bin:$PATH
+ENV PATH /AppBox/System/Server/node_modules/.bin:$PATH
+ENV PATH /AppBox/System/Engine/node_modules/.bin:$PATH
+ENV PATH /AppBox/System/Supervisor/node_modules/.bin:$PATH
 ENV PATH /AppBox/System/SiteServer/node_modules/.bin:$PATH
 
 ENV srvUrl https://appbox.vicvancooten.nl
