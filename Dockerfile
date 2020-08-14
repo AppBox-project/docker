@@ -64,8 +64,8 @@ ENV PATH /AppBox/System/Engine/node_modules/.bin:$PATH
 ENV PATH /AppBox/System/Supervisor/node_modules/.bin:$PATH
 ENV PATH /AppBox/System/SiteServer/node_modules/.bin:$PATH
 
-ENV srvUrl https://appbox.vicvancooten.nl
-ENV dbUrl '192.168.0.2:27017'
+ENV PUBLICURL https://appbox.vicvancooten.nl
+ENV DBURL '192.168.0.2:27017'
 
 # start app
 EXPOSE 8600 8601
