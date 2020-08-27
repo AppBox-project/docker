@@ -10,6 +10,8 @@ RUN yarn global add typescript
 RUN yarn global add ts-node
 RUN yarn global add gatsby-cli
 RUN apk add --no-cache git
+RUN apk update && \
+    apk add --no-cache tzdata
 
 # Files
 RUN mkdir -p /AppBox/Files/Users
