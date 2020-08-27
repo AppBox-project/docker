@@ -66,8 +66,8 @@ ENV PATH /AppBox/System/SiteServer/node_modules/.bin:$PATH
 
 ENV PUBLICURL https://appbox.vicvancooten.nl
 ENV DBURL '192.168.0.2:27017'
-ENV TIMEZONE=Europe/Amsterdam
-RUN ln -snf /usr/share/zoneinfo/$TIMEZONE /etc/localtime && echo $TIMEZONE > /etc/timezone
+ENV TZ=Europe/Amsterdam
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # start app
 EXPOSE 8600 8601
