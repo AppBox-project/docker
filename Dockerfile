@@ -9,9 +9,9 @@ RUN yarn global add react-scripts
 RUN yarn global add typescript
 RUN yarn global add ts-node
 RUN yarn global add gatsby-cli
+RUN apk update
 RUN apk add --no-cache git
-RUN apk update && \
-    apk add --no-cache tzdata
+RUN apk add --no-cache tzdata
 
 # Files
 RUN mkdir -p /AppBox/Files/Users
@@ -68,8 +68,7 @@ ENV PATH /AppBox/System/SiteServer/node_modules/.bin:$PATH
 
 ENV PUBLICURL https://appbox.vicvancooten.nl
 ENV DBURL '192.168.0.2:27017'
-ENV TZ=Europe/Amsterdam
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ENV TZ="Europe/Amsterdam"
 
 # start app
 EXPOSE 8600 8601
