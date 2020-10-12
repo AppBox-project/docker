@@ -13,6 +13,7 @@ RUN yarn global add pm2
 RUN apk update
 RUN apk add --no-cache git
 RUN apk add --no-cache tzdata
+RUN apk add --no-cache wkhtmltopdf
 
 # Files
 RUN mkdir -p /AppBox/Files/Users
