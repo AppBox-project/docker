@@ -14,6 +14,7 @@ RUN apk update
 RUN apk add --no-cache git
 RUN apk add --no-cache tzdata
 RUN apk add --no-cache wkhtmltopdf
+RUN apk add --no-cache bash
 
 # Files
 RUN mkdir -p /AppBox/Files/Users
