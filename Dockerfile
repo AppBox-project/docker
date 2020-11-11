@@ -15,6 +15,7 @@ RUN apk add --no-cache git
 RUN apk add --no-cache tzdata
 RUN apk add --no-cache wkhtmltopdf
 RUN apk add --no-cache bash
+RUN echo 'alias appbox="yarn --cwd /AppBox/System/Supervisor"' >> ~/.bashrc
 
 # Files
 RUN mkdir -p /AppBox/Files/Users
@@ -77,4 +78,4 @@ ENV TZ="Europe/Amsterdam"
 EXPOSE 8600 8601
 WORKDIR /AppBox/System/Supervisor
 
-CMD [ "yarn", "start" ]
+CMD [ "appbox", "start" ]
