@@ -13,7 +13,12 @@ RUN yarn global add pm2
 RUN apk update
 RUN apk add --no-cache git
 RUN apk add --no-cache tzdata
-RUN apk add --no-cache wkhtmltopdf
+RUN apk add qt5-qtbase-dev \
+            wkhtmltopdf \
+            --no-cache \
+            --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
+            --allow-untrusted \
+
 RUN apk add --no-cache bash
 RUN echo 'alias appbox="yarn --cwd /AppBox/System/Supervisor"' >> ~/.bashrc
 
