@@ -36,6 +36,7 @@ RUN mkdir -p /AppBox/Files/Public
 
 # System
 RUN mkdir -p /AppBox/System/Backends
+RUN mkdir -p /AppBox/System/Temp/Apps
 
 # Client
 RUN mkdir -p /System/Client
