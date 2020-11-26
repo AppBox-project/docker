@@ -31,6 +31,7 @@ RUN echo 'alias appbox="yarn --cwd /AppBox/System/Supervisor"' >> ~/.bashrc
 
 # Files
 RUN mkdir -p /AppBox/Files/Users
+RUN mkdir -p /AppBox/Files/Apps
 RUN mkdir -p /AppBox/Files/Public
 
 # System
