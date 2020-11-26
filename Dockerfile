@@ -53,6 +53,14 @@ RUN yarn install
 RUN yarn add typescript
 RUN yarn build
 
+# App-Server
+WORKDIR /AppBox/System
+RUN git clone https://github.com/AppBox-project/app-server.git App-Server
+WORKDIR /AppBox/System/App-Server
+RUN yarn install
+RUN yarn add typescript
+RUN yarn build
+
 # Engine
 WORKDIR /AppBox/System
 RUN git clone https://github.com/AppBox-project/engine.git Engine
@@ -69,19 +77,12 @@ RUN yarn install
 RUN yarn add typescript
 RUN yarn build
 
-# Siteserver
-WORKDIR /AppBox/System
-RUN git clone https://github.com/AppBox-project/siteserver.git SiteServer
-WORKDIR /AppBox/System/SiteServer
-RUN yarn install
-RUN yarn add typescript
-
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /AppBox/System/Client/node_modules/.bin:$PATH
 ENV PATH /AppBox/System/Server/node_modules/.bin:$PATH
 ENV PATH /AppBox/System/Engine/node_modules/.bin:$PATH
 ENV PATH /AppBox/System/Supervisor/node_modules/.bin:$PATH
-ENV PATH /AppBox/System/SiteServer/node_modules/.bin:$PATH
+ENV PATH /AppBox/System/App-Server/node_modules/.bin:$PATH
 
 ENV PUBLICURL https://appbox.vicvancooten.nl
 ENV DBURL '192.168.0.2:27017'
