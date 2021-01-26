@@ -8,7 +8,6 @@ WORKDIR /AppBox
 RUN yarn global add react-scripts
 RUN yarn global add typescript
 RUN yarn global add ts-node
-RUN yarn global add gatsby-cli
 RUN yarn global add pm2
 RUN apk update
 RUN apk add --no-cache git
