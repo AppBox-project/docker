@@ -1,5 +1,5 @@
 # Base image
-FROM node:14.4.0-alpine3.13
+FROM node:14.4.0-alpine3.12
 
 # Set working directory
 WORKDIR /AppBox
@@ -91,7 +91,7 @@ ENV PATH /AppBox/System/Engine/node_modules/.bin:$PATH
 ENV PATH /AppBox/System/Supervisor/node_modules/.bin:$PATH
 ENV PATH /AppBox/System/App-Server/node_modules/.bin:$PATH
 
-ENV PUBLICURL https://appbox.vicvancooten.nl
+ENV PUBLICURL https://box.sample.com
 ENV DBURL '192.168.0.2:27017'
 ENV TZ="Europe/Amsterdam"
 
