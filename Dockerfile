@@ -1,5 +1,5 @@
 # Base image
-FROM node:current-alpine3.13
+FROM node:14.4.0-alpine3.13
 
 # Set working directory
 WORKDIR /AppBox
